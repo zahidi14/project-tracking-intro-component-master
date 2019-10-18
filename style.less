@@ -13,6 +13,18 @@
     padding: 0;
     box-sizing: border-box;
     border: 0;
+    
+}
+
+body{
+    background-image: url("images/back.svg");
+   
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 nav{
@@ -22,21 +34,24 @@ nav{
     height: 150px;
     
     align-items: center;
-    padding:5em 7em;
-    .logo, ul li{
-        align-self: center;
-       
-    }
+    
+   
 
     
     ul{
-        margin-left: auto;
+       
         list-style: none;
         text-transform: uppercase;
+        .logo{
+            .icon{
+                width: 32px;
+                height: 32px;
+            }
+        }
         
         li{
-            display: inline-block;
-            padding: 0 10px;
+            
+            
             a{
                 color: @DarkBlue;
                 text-decoration: none;
@@ -49,23 +64,20 @@ nav{
         }
         .login{
             a{
-            margin-left: 4em;
+           
             color: @DarkGrayish;
             }
         }
     }
 }
 .jumbotron{
+   
     display: flex;
     width: 100%;
     justify-content: space-between;
-    .backgwrapper{
-       
-        order: 2;
-    }
+    
     .content{
-        order: 1;
-        margin-left: 7em;
+      
         .new,.mono{
             color:@DarkGrayish;
             display: inline-block;
@@ -98,7 +110,7 @@ nav{
         }
         .text{
             margin-top: 2em;
-            padding-right: 17em;
+            
             color: @DarkGrayish;
         }
         button, p{
@@ -108,11 +120,11 @@ nav{
         }
         button{
             height: 40px;
-            width: 25%;
+            width: 140px;
             border-radius: 5px;
             margin-right: 16px;
             background-color: @red;
-            font-weight: 900;
+            font-weight: 600;
             text-align: center;
             letter-spacing: -0.049em;
             color: @LightGrayish;
@@ -134,4 +146,92 @@ footer{
     margin-top: 100px;
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+}
+
+@media only screen and(max-width: 800px){
+    nav {
+        padding: 2em;
+        display: block;
+        .logo{
+            display: inline;
+            .icon{
+                float: right;
+
+            }
+            .logo-icon{
+                float: left;
+            }
+        }
+        ul{
+               display: none;
+            li{
+                margin:10px 0;
+            }
+        }
+       
+        
+    }
+    .jumbotron{
+        flex-direction: column;
+        .backgwrapper{
+            order: 1;
+            display: flex;
+            img{
+                z-index: -1;
+            }
+        }
+        .content{
+            order:2;
+            margin:0;
+            padding:0 1em;
+        }
+    }
+}
+@media only screen and(max-width:800px){
+    ul.responsive{
+        display: inline-block;
+        margin: 40px auto;
+        text-align: center;
+        width: 100%;
+        background: @LightGrayish;  
+    }
+}
+
+@media only screen and(min-width: 800px){
+    nav{
+        .logo,  ul li{
+            align-self: center;
+           
+        }
+        .icon{
+            display: none;
+        }
+        padding:5em 7em;
+        ul{
+            margin-left: auto;
+            li{
+                display: inline-block;
+                padding: 0 10px;
+            }
+            .login{
+                margin-left: 4em;
+            }
+        }
+        
+    }
+
+    .jumbotron{
+        .backgwrapper{
+       
+            order: 2;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .content{
+            order: 1;
+            margin-left: 7em;
+        }
+    }
 }
